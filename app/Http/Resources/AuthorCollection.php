@@ -14,6 +14,17 @@ class AuthorCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return[
+            'data' => $this->collection->transform(function ($author){
+                return[
+                    'id' => $author->id,
+                    'name' => $author->name,
+                    'biography' => $author->description,
+                    'book_total' => $author->books->count(),
+                    'created_at' => $author->created_at,
+                    'updated_at' => $author->updated_at
+                ];
+            }),
+        ];
     }
 }
