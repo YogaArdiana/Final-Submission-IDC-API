@@ -18,7 +18,26 @@ class BookController extends Controller
     public function index()
     {
         try{
-            $books = Book::with(["author", "category"])->paginate(5);
+            $author = request()->query('author');
+            $category = request()->query('category');
+            $order = request()->query('order');
+            $search = request()->query('search');
+
+            $books = Book::with(["author", "category"]);
+
+            if($author){
+                    $books = $books->where('author_id', $author);
+            }
+            if($category){
+                    $books = $books->where('category_id', $category);
+            }   
+            if ($order = request()->query('order')) {
+                $books = $books->orderBy('created_at', $order === 'latest' ? 'desc' : 'asc');
+            }
+            if($search){
+                $books = $books->where('title', 'like', '%' . $search . '%');
+            }
+            $books = $books->paginate(5);
             return (new BookCollection($books))->additional([
                 'success' => true,
                 'code' => 200,

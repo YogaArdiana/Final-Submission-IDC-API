@@ -19,7 +19,20 @@ class AuthorController extends Controller
     public function index()
     {
         try{
-            $authors = Author::with(['books'])->paginate(5);
+            $search = request()->query('search');
+            $order = request()->query('order');
+
+            $authors = Author::with(['books']);
+            if($search){
+                $authors = $authors->where('name', 'like', '%' . $search . '%');
+            }
+
+            if($order){
+                $authors = $authors->orderBy('created_at', $order === 'latest' ? 'desc' : 'asc');
+            }
+            
+            $authors = $authors->paginate(5);
+
             return (new AuthorCollection($authors))->additional([
                 'success' => true,
                 'code' => 200,

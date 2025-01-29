@@ -19,12 +19,22 @@ class CategoryController extends Controller
     public function index()
     {
         try{
-            $category = Category::with(["books"])->paginate(5);
-            return (new CategoryCollection($category))->additional([
+            $search = request()->query('search');
+            $order = request()->query('order');
+
+            $categories = Category::with(["books"]);
+            if($search){
+                $categories = $categories->where('name', 'like', '%' . $search . '%');
+            }
+            if($order){
+                $categories = $categories->orderBy('created_at', $order === 'latest' ? 'desc' : 'asc');
+            }
+            $categories = $categories->paginate(5);
+            return (new CategoryCollection($categories))->additional([
                 'success' => true,
                 'code' => 200,
                 'message' => 'Berhasil Mendapatkan Data',
-                'total' => $category->total()
+                'total' => $categories->total()
             ])
             ->response()
             ->setStatusCode(200);
