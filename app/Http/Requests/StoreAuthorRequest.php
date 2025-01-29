@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class StoreAuthorRequest extends FormRequest
 {
@@ -22,7 +24,26 @@ class StoreAuthorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'biography' => 'required|string',
         ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Nama Penulis wajib diisi',
+            'name.string' => 'Nama Penulis harus berupa string',
+            'name.max' => 'Nama Penulis maksimal 255 karakter',
+            'biography.required' => 'Biografi Penulis wajib diisi',
+            'biography.string' => 'Biografi Penulis harus berupa string',
+        ];
+    }
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'success'   => false,
+            'message'   => 'Validasi Error',
+            'errors'      => $validator->errors()
+        ], 422));
     }
 }

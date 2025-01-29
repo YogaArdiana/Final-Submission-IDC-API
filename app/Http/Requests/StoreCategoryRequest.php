@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class StoreCategoryRequest extends FormRequest
 {
@@ -22,7 +24,23 @@ class StoreCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
         ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Nama Kategori harus diisi.',
+            'name.string' => 'Nama Kategori harus berupa teks.',
+            'name.max' => 'Nama Kategori tidak boleh lebih dari 255 karakter.',
+        ];
+    }
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'success'   => false,
+            'message'   => 'Validasi Error',
+            'errors'      => $validator->errors()
+        ], 422));
     }
 }
