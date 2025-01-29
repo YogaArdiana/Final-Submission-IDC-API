@@ -19,7 +19,7 @@ class AuthorCollection extends ResourceCollection
                 return[
                     'id' => $author->id,
                     'name' => $author->name,
-                    'biography' => $author->description,
+                    'biography' => $author->biography,
                     'book_total' => $author->books->count(),
                     'created_at' => $author->created_at,
                     'updated_at' => $author->updated_at
