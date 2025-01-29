@@ -38,9 +38,9 @@ class StoreBookRequest extends FormRequest
             'title.max' => 'Judul buku tidak boleh lebih dari 255 karakter.',
             'description.required' => 'Deskripsi harus diisi.',
             'author_id.required' => 'Penulis harus dipilih.',
-            'author_id.exists' => 'Penulis yang dipilih tidak valid.',
+            'author_id.exists' => 'Penulis yang dipilih tidak valid / tidak ada.',
             'category_id.required' => 'Kategori harus dipilih.',
-            'category_id.exists' => 'Kategori yang dipilih tidak valid.',
+            'category_id.exists' => 'Kategori yang dipilih tidak valid / tidak ada.',
         ];
     }
     public function failedValidation(Validator $validator)

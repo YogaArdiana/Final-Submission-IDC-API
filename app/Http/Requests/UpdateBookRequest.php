@@ -40,9 +40,9 @@ class UpdateBookRequest extends FormRequest
             'description.sometimes' => 'Deskripsi opsional, jika diisi harus berupa teks.',
             'description.string' => 'Deskripsi harus berupa teks.',
             'author_id.sometimes' => 'Penulis opsional, jika dipilih harus valid.',
-            'author_id.exists' => 'Penulis yang dipilih tidak valid.',
+            'author_id.exists' => 'Penulis yang dipilih tidak valid / tidak ada.',
             'category_id.sometimes' => 'Kategori opsional, jika dipilih harus valid.',
-            'category_id.exists' => 'Kategori yang dipilih tidak valid.',
+            'category_id.exists' => 'Kategori yang dipilih tidak valid / tidak ada.',
         ];
     }
     public function failedValidation(Validator $validator)
