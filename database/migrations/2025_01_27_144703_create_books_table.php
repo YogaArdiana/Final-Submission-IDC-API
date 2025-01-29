@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->foreignId('author_id')->constrained('authors');  // Relasi ke tabel author
-            $table->foreignId('category_id')->constrained('categories');  // Relasi ke tabel category
+            $table->foreignId('author_id')->constrained('authors')->onDelete('cascade');  // Relasi ke tabel author
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');  // Relasi ke tabel category
             $table->timestamps();
         });
     }
