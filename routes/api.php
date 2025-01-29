@@ -11,8 +11,10 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::prefix('v1')->group(function () {
-    Route::apiResource('books', BookController::class)->except('create', 'edit');
-    Route::apiResource('authors', AuthorController::class)->except('create', 'edit');
-    Route::apiResource('categories', CategoryController::class)->except('create', 'edit');
+Route::middleware('throttle:api')->group(function () {
+    Route::prefix('v1')->group(function () {
+        Route::apiResource('books', BookController::class);
+        Route::apiResource('authors', AuthorController::class);
+        Route::apiResource('categories', CategoryController::class);
+    });
 });
