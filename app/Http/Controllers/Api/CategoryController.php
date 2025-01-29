@@ -33,7 +33,7 @@ class CategoryController extends Controller
             return (new CategoryCollection($categories))->additional([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Berhasil Mendapatkan Data',
+                'message' => 'Berhasil Mendapatkan Semua Data Category',
                 'total' => $categories->total()
             ])
             ->response()
@@ -59,7 +59,7 @@ class CategoryController extends Controller
             return (new CategoryResource($category))->additional([
                 'success' => true,
                 'code' => 201,
-                'message' => 'Data Berhasil Disimpan',
+                'message' => 'Data Category Berhasil Disimpan',
             ]);
         }catch(Exception $e){
             return response()->json([
@@ -81,13 +81,13 @@ class CategoryController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Category Tidak Ditemukan',
                 ], 404);
             }
             return (new CategoryResource($category))->additional([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Berhasil Mendapatkan Data',
+                'message' => 'Berhasil Mendapatkan Data Category',
             ])
             ->response()
             ->setStatusCode(200);
@@ -112,14 +112,14 @@ class CategoryController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Category Tidak Ditemukan',
                 ], 404);
             }
             $category->update($request->all());
             return (new CategoryResource($category))->additional([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Data Berhasil Diupdate',
+                'message' => 'Data Category Berhasil Diperbarui',
             ])
             ->response()
             ->setStatusCode(200);
@@ -143,14 +143,14 @@ class CategoryController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Category Tidak Ditemukan',
                 ], 404);
             }
             $category->delete();
             return response()->json([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Data Berhasil Dihapus',
+                'message' => 'Data Category Berhasil Dihapus',
             ], 200);
         }catch(Exception $e){
             return response()->json([

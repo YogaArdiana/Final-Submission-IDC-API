@@ -36,7 +36,7 @@ class AuthorController extends Controller
             return (new AuthorCollection($authors))->additional([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Berhasil Mendapatkan Data',
+                'message' => 'Berhasil Mendapatkan Semua Data Author',
                 'total' => $authors->total()
             ])
             ->response()
@@ -62,7 +62,7 @@ class AuthorController extends Controller
             return (new AuthorResource($author))->additional([
                 'success' => true,
                 'code' => 201,
-                'message' => 'Data Berhasil Disimpan',
+                'message' => 'Data Author Berhasil Disimpan',
             ])
             ->response()
             ->setStatusCode(201);
@@ -86,13 +86,13 @@ class AuthorController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Author Tidak Ditemukan',
                 ], 404);
             }
             return (new AuthorResource($author))->additional([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Berhasil Mendapatkan Data',
+                'message' => 'Data Author Berhasil Ditemukan',
             ])
             ->response()
             ->setStatusCode(200);
@@ -117,14 +117,14 @@ class AuthorController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Author Tidak Ditemukan',
                 ], 404);
             }
             $author->update($request->all());
             return (new AuthorResource($author))->additional([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Data Berhasil Diupdate',
+                'message' => 'Data Author Berhasil Diperbarui',
             ])
             ->response()
             ->setStatusCode(200);
@@ -148,14 +148,14 @@ class AuthorController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Author Tidak Ditemukan',
                 ], 404);
             }
             $author->delete();
             return response()->json([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Data Berhasil Dihapus',
+                'message' => 'Data Author Berhasil Dihapus',
             ], 200);
         }catch(Exception $e){
             return response()->json([

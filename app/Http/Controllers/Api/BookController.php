@@ -98,14 +98,14 @@ class BookController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Buku Tidak Ditemukan',
                 ], 500);
             }
 
             return (new BookResource($book))->additional([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Data Berhasil Ditemukan'
+                'message' => 'Data Buku Berhasil Ditemukan'
             ]);
 
         }catch(Exception $e){
@@ -129,14 +129,14 @@ class BookController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Buku Tidak Ditemukan',
                 ], 404);
             }
             $book->update($request->all());
             return (new BookResource($book))->additional([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Data Berhasil Diperbaharui',
+                'message' => 'Data Buku Berhasil Diperbarui',
             ])->response()->setStatusCode(200);
         }catch(Exception $e){
             return response()->json([
@@ -158,14 +158,14 @@ class BookController extends Controller
                 return response()->json([
                     'success' => false,
                     'code' => 404,
-                    'message' => 'Data Tidak Ditemukan',
+                    'message' => 'Data Buku Tidak Ditemukan',
                 ], 404);
             }
             $book->delete();
             return response()->json([
                 'success' => true,
                 'code' => 200,
-                'message' => 'Data Berhasil Dihapus',
+                'message' => 'Data Buku Berhasil Dihapus',
             ], 200);
         }catch(Exception $e){
             return response()->json([
