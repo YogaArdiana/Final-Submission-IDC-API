@@ -81,10 +81,10 @@ http://localhost:8000/
 
 | Code |  Status                | Description
 | :-------- |  :------------------------- |-|
-| `200` | OK ✅ |The request was successful, and the response contains the requested data. |
+| `200` | OK ✅|The request was successful, and the response contains the requested data. |
 | `201` | Created 🆕  |The request was successful, and new data was created. Typically used for resource creation.|
-| `404` | Created 🆕 |The requested data could not be found. This indicates that the resource does not exist.|
-| `500` | Not Found ❌ |The server encountered an error while processing the request. This indicates an issue on the server-side.| 
+| `404` | Not Found ❌ |The requested data could not be found. This indicates that the resource does not exist.|
+| `500` | Internal Server Error 🚨 |The server encountered an error while processing the request. This indicates an issue on the server-side.| 
 | `422` | Unprocessable Entity ⚠️ |The request was well-formed but contains invalid data. This typically occurs when the input data does not meet the required validation rules.| 
 
 
