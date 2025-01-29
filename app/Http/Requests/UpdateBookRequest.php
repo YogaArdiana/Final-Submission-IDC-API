@@ -24,10 +24,10 @@ class UpdateBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['sometimes', 'string', 'max:255'],
-            'description' => ['sometimes', 'string'],
-            'author_id' => ['sometimes', 'exists:authors,id'],
-            'category_id' => ['sometimes', 'exists:categories,id'],
+            'title' => 'sometimes|string|max:255',
+            'description' => 'sometimes|string',
+            'author_id' => 'sometimes|exists:authors,id',
+            'category_id' => 'sometimes|exists:categories,id',
         ];
         
     }
