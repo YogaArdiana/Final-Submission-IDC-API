@@ -142,7 +142,7 @@ http://localhost:8000/
 
 
 
-## GET Method Example
+## 📥GET Method Example
 
 ####  `Books Model`
 
@@ -718,7 +718,7 @@ Result :
 
 Categories Url :
 ```bash
-http://127.0.0.1:8000/api/v1/books/5
+http://127.0.0.1:8000/api/v1/categories/5
 ```
 Result : 
 
@@ -952,7 +952,7 @@ http://127.0.0.1:8000/api/v1/books?author=20
 ```bash
 http://127.0.0.1:8000/api/v1/books?category=10
 ```
-## POST Method Example
+## ➕POST Method Example
 
 ####  `Books Model`
 
@@ -1106,7 +1106,7 @@ validation error Example :
     }
 }
 ```
-## PUT Method Example
+## 🔄PUT Method Example
 
 ####  `Books Model`
 
@@ -1222,7 +1222,7 @@ result :
 }
 ```
 
-## Delete Method Example
+## 🗑️Delete Method Example
 
 ####  `all model`
 
@@ -1243,3 +1243,9 @@ result :
 ```
 
 > Note: If the Category/Author data is deleted, the book data related to that table will also be deleted
+
+
+## 📜License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
