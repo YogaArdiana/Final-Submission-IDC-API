@@ -149,7 +149,7 @@ http://localhost:8000/
 #### Get All Data
 
 Books Url :
-```http
+```bash
 http://127.0.0.1:8000/api/v1/books
 ```
 The URL will return data containing 5 book entries with author and category (name,id), pagination links, along with code, messages, and success status.
@@ -336,7 +336,7 @@ Result :
 
 data format : 
 
-```http
+```json
 
 {
     "data": [
@@ -374,12 +374,12 @@ data format :
 #### Get All Data
 
 Authors Url :
-```http
+```bash
 http://127.0.0.1:8000/api/v1/authors
 ```
 Result :
 
-```http
+```json
 {
     "data": [
         {
@@ -531,3 +531,715 @@ data format :
     "total": 500
 }
 ```
+
+####  `Category Model`
+
+#### Get All Data
+
+Category Url :
+```bash
+http://127.0.0.1:8000/api/v1/categories
+```
+Result :
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "iure",
+            "description": "Illo soluta et corporis deleniti quisquam maiores unde temporibus. Quo occaecati repellat alias quo id magni. Non aut omnis animi perferendis. Voluptas quisquam laborum sed dolor a sint consequatur.",
+            "book_total": 47,
+            "created_at": "2025-01-29T14:53:55.000000Z",
+            "updated_at": "2025-01-29T14:53:55.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "sed",
+            "description": "Et quasi laborum ratione animi cum et eum. Est aliquid sed id est voluptatum hic. Et animi sed facere voluptas provident. Rerum qui ut magni non.",
+            "book_total": 52,
+            "created_at": "2025-01-29T14:53:55.000000Z",
+            "updated_at": "2025-01-29T14:53:55.000000Z"
+        },
+        {
+            "id": 3,
+            "name": "maxime",
+            "description": "Ea temporibus a ut eveniet molestiae optio architecto. Et sequi vero labore deleniti enim. Eius ut adipisci placeat iure dolorem.",
+            "book_total": 57,
+            "created_at": "2025-01-29T14:53:55.000000Z",
+            "updated_at": "2025-01-29T14:53:55.000000Z"
+        },
+        {
+            "id": 4,
+            "name": "illum",
+            "description": "Nemo maiores ea maiores veritatis ea. Ducimus aliquam natus itaque consequuntur placeat ullam tempore id. Molestias nesciunt sit quaerat sed nemo commodi.",
+            "book_total": 42,
+            "created_at": "2025-01-29T14:53:55.000000Z",
+            "updated_at": "2025-01-29T14:53:55.000000Z"
+        },
+        {
+            "id": 5,
+            "name": "pariatur",
+            "description": "Aperiam consequatur quae omnis dolores id expedita qui. Suscipit rerum deleniti fuga omnis provident. Necessitatibus a tempora modi. Et eaque cumque minima qui non quam maxime.",
+            "book_total": 58,
+            "created_at": "2025-01-29T14:53:55.000000Z",
+            "updated_at": "2025-01-29T14:53:55.000000Z"
+        }
+    ],
+    "links": {
+        "first": "http://127.0.0.1:8000/api/v1/categories?page=1",
+        "last": "http://127.0.0.1:8000/api/v1/categories?page=2",
+        "prev": null,
+        "next": "http://127.0.0.1:8000/api/v1/categories?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 2,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/v1/categories?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/v1/categories?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/v1/categories?page=2",
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http://127.0.0.1:8000/api/v1/categories",
+        "per_page": 5,
+        "to": 5,
+        "total": 10
+    },
+    "success": true,
+    "code": 200,
+    "message": "Berhasil Mendapatkan Semua Data Category",
+    "total": 10
+}
+```
+
+data format : 
+```json
+{
+    "data": [
+        {
+            "id": ,
+            "name": "",
+            "description": "",
+            "book_total": ,
+            "created_at": "",
+            "updated_at": ""
+        }
+    ],
+    "links": {
+    },
+    "meta": {
+    },
+    "success": true,
+    "code": 200,
+    "message": "Berhasil Mendapatkan Semua Data Category",
+    "total": 10
+}
+```
+####  `Book Model`
+
+#### Get Data By Id
+
+Books Url :
+```bash
+http://127.0.0.1:8000/api/v1/books/5
+```
+Result : 
+
+```json
+{
+    "data": {
+        "id": 5,
+        "title": "Veritatis eos quaerat nihil est.",
+        "description": "Ut eum sunt est id cum quis aspernatur. Qui doloribus et officia aut eos quia. Alias nihil maxime qui sit omnis in in. Fugiat consectetur quis iste ea enim in. Possimus quidem natus quo culpa repellendus.",
+        "author": {
+            "id" : 10
+            "name": "Fernando Wyman"
+        },
+        "category": {
+            "id" : 18
+            "name": "pariatur"
+        },
+        "created_at": "2025-01-29T14:53:56.000000Z",
+        "updated_at": "2025-01-29T14:53:56.000000Z"
+    },
+    "success": true,
+    "code": 200,
+    "message": "Data Buku Berhasil Ditemukan"
+}
+```
+
+####  `Author Model`
+
+#### Get Data By Id
+
+Authors Url :
+```bash
+http://127.0.0.1:8000/api/v1/authors/5
+```
+Result : 
+
+```json
+{
+    "data": {
+        "id": 5,
+        "name": "Kole Quitzon",
+        "biography": "Esse officiis voluptas eos. Omnis culpa est aut et. Perferendis earum quam incidunt officia. Eum in non sint dolorem cumque in.",
+        "book_total": 13,
+        "created_at": "2025-01-29T14:53:55.000000Z",
+        "updated_at": "2025-01-29T14:53:55.000000Z"
+    },
+    "success": true,
+    "code": 200,
+    "message": "Data Author Berhasil Ditemukan"
+}
+```
+
+####  `Category Model`
+
+#### Get Data By Id
+
+Categories Url :
+```bash
+http://127.0.0.1:8000/api/v1/books/5
+```
+Result : 
+
+```json
+{
+    "data": {
+        "id": 5,
+        "name": "pariatur",
+        "description": "Aperiam consequatur quae omnis dolores id expedita qui. Suscipit rerum deleniti fuga omnis provident. Necessitatibus a tempora modi. Et eaque cumque minima qui non quam maxime.",
+        "book_total": 58,
+        "created_at": "2025-01-29T14:53:55.000000Z",
+        "updated_at": "2025-01-29T14:53:55.000000Z"
+    },
+    "success": true,
+    "code": 200,
+    "message": "Berhasil Mendapatkan Data Category"
+}
+```
+
+####  `Book Model`
+
+#### Get Data By Search
+
+Books Url :
+```bash
+http://127.0.0.1:8000/api/v1/books?search=fugiat+quo
+```
+Result : 
+```json
+{
+    "data": [
+        {
+            "id": 2,
+            "title": "Fugiat quo nisi est quis at modi.",
+            "description": "Incidunt eum et corporis eligendi. Modi earum eos nihil voluptatem quo sed. Velit ducimus nam error voluptates nam voluptatibus quo voluptates. Odio ea et incidunt cumque.",
+            "author": {
+                "id": 37,
+                "name": "Dr. Kip Kuhlman III"
+            },
+            "category": {
+                "id": 10,
+                "name": "quos"
+            },
+            "created_at": "2025-01-29T14:53:56.000000Z",
+            "updated_at": "2025-01-29T14:53:56.000000Z"
+        }
+    ],
+    "links": {
+        "first": "http://127.0.0.1:8000/api/v1/books?page=1",
+        "last": "http://127.0.0.1:8000/api/v1/books?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/v1/books?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http://127.0.0.1:8000/api/v1/books",
+        "per_page": 5,
+        "to": 1,
+        "total": 1
+    },
+    "success": true,
+    "code": 200,
+    "message": "Berhasil Mendapatkan Data",
+    "total": 1
+}
+```
+
+
+####  `Author Model`
+
+#### Get Data By Search
+
+Authors Url :
+```bash
+http://127.0.0.1:8000/api/v1/authors?search=Hilton
+```
+Result : 
+```json
+{
+    "data": [
+        {
+            "id": 23,
+            "name": "Prof. Hilton Lubowitz DDS",
+            "biography": "Rem voluptas natus omnis non quidem quia fuga recusandae. Id iure molestias animi placeat culpa. Qui nisi ullam non molestiae at.",
+            "book_total": 12,
+            "created_at": "2025-01-29T14:53:55.000000Z",
+            "updated_at": "2025-01-29T14:53:55.000000Z"
+        }
+    ],
+    "links": {
+        "first": "http://127.0.0.1:8000/api/v1/authors?page=1",
+        "last": "http://127.0.0.1:8000/api/v1/authors?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/v1/authors?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http://127.0.0.1:8000/api/v1/authors",
+        "per_page": 5,
+        "to": 1,
+        "total": 1
+    },
+    "success": true,
+    "code": 200,
+    "message": "Berhasil Mendapatkan Semua Data Author",
+    "total": 1
+}
+```
+
+
+####  `Category Model`
+
+#### Get Data By Search
+
+Categories Url :
+```bash
+http://127.0.0.1:8000/api/v1/categories/?search=pariatur
+```
+Result : 
+```json
+{
+    "data": [
+        {
+            "id": 5,
+            "name": "pariatur",
+            "description": "Aperiam consequatur quae omnis dolores id expedita qui. Suscipit rerum deleniti fuga omnis provident. Necessitatibus a tempora modi. Et eaque cumque minima qui non quam maxime.",
+            "book_total": 58,
+            "created_at": "2025-01-29T14:53:55.000000Z",
+            "updated_at": "2025-01-29T14:53:55.000000Z"
+        }
+    ],
+    "links": {
+        "first": "http://127.0.0.1:8000/api/v1/categories?page=1",
+        "last": "http://127.0.0.1:8000/api/v1/categories?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/v1/categories?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http://127.0.0.1:8000/api/v1/categories",
+        "per_page": 5,
+        "to": 1,
+        "total": 1
+    },
+    "success": true,
+    "code": 200,
+    "message": "Berhasil Mendapatkan Semua Data Category",
+    "total": 1
+}
+```
+####  `All Model`
+
+#### Sorting Data Order By
+
+- Latest
+- Oldest
+
+ Url :
+```bash
+http://127.0.0.1:8000/api/v1/model?order=latest
+```
+
+####  `Book Model`
+
+#### Get Data based on id relationship
+
+- ?author=
+- ?category=
+
+ Url :
+```bash
+http://127.0.0.1:8000/api/v1/books?author=20
+```
+```bash
+http://127.0.0.1:8000/api/v1/books?category=10
+```
+## POST Method Example
+
+####  `Books Model`
+
+#### Store Data
+
+Books Url :
+```bash
+http://127.0.0.1:8000/api/v1/books
+```
+
+body : 
+```json
+{
+   "title" : "Buku Kerajaan Ngawi",
+   "description" : "Buku Yang Menceritakan Kisah Legenda",
+   "author_id" : 10,
+   "category_id" : 9
+}
+```
+
+result : 
+```json
+{
+    "data": {
+        "id": 501,
+        "title": "Buku Kerajaan Ngawi",
+        "description": "Buku Yang Menceritakan Kisah Legenda",
+        "author": {
+            "id" : 10
+            "name": "Lucile Zulauf"
+        },
+        "category": {
+            "id" : 9
+            "name": "voluptas"
+        },
+        "created_at": "2025-01-30T08:45:13.000000Z",
+        "updated_at": "2025-01-30T08:45:13.000000Z"
+    },
+    "success": true,
+    "code": 201,
+    "message": "Data Berhasil Ditambahkan"
+}
+```
+
+validation error Example : 
+```json
+{
+    "success": false,
+    "code" : 422,
+    "message": "Validasi Error",
+    "errors": {
+        "category_id": [
+            "Kategori yang dipilih tidak valid / tidak ada."
+        ]
+    }
+}
+```
+
+####  `Author Model`
+
+#### Store Data
+
+Authors Url :
+```bash
+http://127.0.0.1:8000/api/v1/authors
+```
+
+body : 
+```json
+{
+   "name" : "Yoga Ardiana",
+   "biography" : "Seorang Penulis Yang Berbakat Asal Bali"
+}
+```
+
+result : 
+```json
+{
+    "data": {
+        "id": 51,
+        "name": "Yoga Ardiana",
+        "biography": "Seorang Penulis Yang Berbakat Asal Bali",
+        "book_total": 0,
+        "created_at": "2025-01-30T08:48:49.000000Z",
+        "updated_at": "2025-01-30T08:48:49.000000Z"
+    },
+    "success": true,
+    "code": 201,
+    "message": "Data Author Berhasil Disimpan"
+}
+```
+
+validation error Example : 
+```json
+{
+    "success": false,
+    "code" : 422
+    "message": "Validasi Error",
+    "errors": {
+        "name": [
+            "Nama Penulis wajib diisi"
+        ]
+    }
+}
+```
+
+####  `Category Model`
+
+#### Store Data
+
+Categories Url :
+```bash
+http://127.0.0.1:8000/api/v1/categories
+```
+
+body : 
+```json
+{
+   "name" : "Legenda",
+   "biography" : "Buku Buku Yang Menceritakan Kisah Kisah Legenda"
+}
+```
+
+result : 
+```json
+{
+    "data": {
+        "id": 11,
+        "name": "Legenda",
+        "description": null,
+        "book_total": 0,
+        "created_at": "2025-01-30T08:53:08.000000Z",
+        "updated_at": "2025-01-30T08:53:08.000000Z"
+    },
+    "success": true,
+    "code": 201,
+    "message": "Data Category Berhasil Disimpan"
+}
+```
+
+validation error Example : 
+```json
+{
+    "success": false,
+    "code": 422
+    "message": "Validasi Error",
+    "errors": {
+        "name": [
+            "Nama Kategori harus diisi."
+        ]
+    }
+}
+```
+## PUT Method Example
+
+####  `Books Model`
+
+#### Update Data
+
+Books Url :
+```bash
+http://127.0.0.1:8000/api/v1/books/20
+```
+> Note: Only the fields that are filled in will be updated, the others will be ignored 
+
+body :
+```json
+{
+   "title" : "Buku Cinta", 
+   "description" : "Buku Buku Yang Menceritakan Kisah Kisah Cinta",
+   "author_id": 10,
+   "category_id": 8
+}
+```
+
+result : 
+```json
+{
+    "data": {
+        "id": 20,
+        "title": "Buku Cinta",
+        "description": "Buku Buku Yang Menceritakan Kisah Kisah Cinta",
+        "author": {
+            "id" : 10
+            "name": "Lucile Zulauf"
+        },
+        "category": {
+            "id" : 8
+            "name": "nam"
+        },
+        "created_at": "2025-01-29T14:53:56.000000Z",
+        "updated_at": "2025-01-30T08:57:51.000000Z"
+    },
+    "success": true,
+    "code": 200,
+    "message": "Data Buku Berhasil Diperbarui"
+}
+```
+
+####  `Author Model`
+
+#### Update Data
+
+Authors Url :
+```bash
+http://127.0.0.1:8000/api/v1/authors/20
+```
+> Note: Only the fields that are filled in will be updated, the others will be ignored 
+
+body :
+```json
+{
+    "name" : "Mas Amba",
+    "biography" : "penulis berbakat asal jawa timur"
+}
+```
+
+result : 
+```json
+{
+    "data": {
+        "id": 20,
+        "name": "Mas Amba",
+        "biography": "penulis berbakat asal jawa timur",
+        "book_total": 5,
+        "created_at": "2025-01-29T14:53:55.000000Z",
+        "updated_at": "2025-01-30T09:03:34.000000Z"
+    },
+    "success": true,
+    "code": 200,
+    "message": "Data Author Berhasil Diperbarui"
+}
+```
+
+####  `Category Model`
+
+#### Update Data
+
+Categories Url :
+```bash
+http://127.0.0.1:8000/api/v1/categories/9
+```
+> Note: Only the fields that are filled in will be updated, the others will be ignored 
+
+body :
+```json
+{
+    "name" : "Buku Dewasa",
+    "description" : "Buku Buku Yang Menceritakan Pahitnya Hidup"
+}
+```
+
+result : 
+```json
+{
+    "data": {
+        "id": 9,
+        "name": "Buku Dewasa",
+        "description": "Buku Buku Yang Menceritakan Pahitnya Hidup",
+        "book_total": 46,
+        "created_at": "2025-01-29T14:53:55.000000Z",
+        "updated_at": "2025-01-30T09:06:44.000000Z"
+    },
+    "success": true,
+    "code": 200,
+    "message": "Data Category Berhasil Diperbarui"
+}
+```
+
+## Delete Method Example
+
+####  `all model`
+
+#### delete Data
+
+Model Url :
+```bash
+http://127.0.0.1:8000/api/v1/model/20
+```
+
+result :
+```json
+{
+    "success": true,
+    "code": 200,
+    "message": "Data Model Berhasil Dihapus"
+}
+```
+
+> Note: If the Category/Author data is deleted, the book data related to that table will also be deleted
