@@ -19,12 +19,12 @@ class BookResource extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
             'author' => $this->author ? [
-                // 'id' => $this->author->id,
+                'id' => $this->author->id,
                 'name' => $this->author->name,
                 // 'description' => $this->author->biography
             ] : null,
             'category' => $this->category ? [
-                // 'id' => $this->category->id,
+                'id' => $this->category->id,
                 'name' => $this->category->name
             ] : null,
             'created_at' => $this->created_at,

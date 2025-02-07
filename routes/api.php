@@ -12,9 +12,9 @@ Route::get('/user', function (Request $request) {
 
 
 Route::middleware('throttle:api')->group(function () {
-    Route::prefix('v1')->group(function () {
-        Route::apiResource('books', BookController::class);
-        Route::apiResource('authors', AuthorController::class);
-        Route::apiResource('categories', CategoryController::class);
-    });
+        Route::prefix('v1')->group(function () {
+            Route::apiResource('books', BookController::class);
+            Route::apiResource('authors', AuthorController::class);
+            Route::apiResource('categories', CategoryController::class);
+        });
 });
