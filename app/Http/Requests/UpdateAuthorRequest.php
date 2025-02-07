@@ -40,6 +40,7 @@ class UpdateAuthorRequest extends FormRequest
     {
         throw new HttpResponseException(response()->json([
             'success'   => false,
+            'code' => 422,
             'message'   => 'Validasi Error',
             'errors'      => $validator->errors()
         ], 422));
