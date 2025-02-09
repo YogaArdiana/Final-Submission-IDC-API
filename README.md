@@ -102,7 +102,18 @@ http://localhost:8000/
 | `201` | Created 🆕  |The request was successful, and new data was created. Typically used for resource creation.|
 | `404` | Not Found ❌ |The requested data could not be found. This indicates that the resource does not exist.|
 | `500` | Internal Server Error 🚨 |The server encountered an error while processing the request. This indicates an issue on the server-side.| 
-| `422` | Unprocessable Entity ⚠️ |The request was well-formed but contains invalid data. This typically occurs when the input data does not meet the required validation rules.| 
+| `422` | Unprocessable Entity ⚠️ |The request was well-formed but contains invalid data. This typically occurs when the input data does not meet the required validation rules.|
+
+## 📝Seed Data
+
+#### Explanation
+
+| Model |  Data                | Description
+| :-------- |  :------------------------- |-|
+| `Books` | 500| Create 500 Books Data |
+| `Authors` | 50  |Create 50 Authors Data |
+| `Categories` | 10 |Create 10 Categories Data |
+
 
 ## 📖Books Attributes
 
