@@ -1222,15 +1222,15 @@ result :
 }
 ```
 
-## 🗑️Delete Method Example
+## 🗑️DELETE Method Example
 
-####  `all model`
+####  `books`
 
 #### delete Data
 
 Model Url :
 ```bash
-http://127.0.0.1:8000/api/v1/model/20
+http://127.0.0.1:8000/api/v1/books/20
 ```
 
 result :
@@ -1238,7 +1238,41 @@ result :
 {
     "success": true,
     "code": 200,
-    "message": "Data Model Berhasil Dihapus"
+    "message": "Data Buku Berhasil Dihapus"
+}
+```
+####  `authors`
+
+#### delete Data
+
+Model Url :
+```bash
+http://127.0.0.1:8000/api/v1/authors/20
+```
+
+result :
+```json
+{
+    "success": true,
+    "code": 200,
+    "message": "Data Author Berhasil Dihapus"
+}
+```
+####  `categories`
+
+#### delete Data
+
+Model Url :
+```bash
+http://127.0.0.1:8000/api/v1/categories/20
+```
+
+result :
+```json
+{
+    "success": true,
+    "code": 200,
+    "message": "Data Category Berhasil Dihapus"
 }
 ```
 
@@ -1247,5 +1281,5 @@ result :
 
 ## 📜License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Make With ❤ By Yoga Ardiana, License : [MIT](https://choosealicense.com/licenses/mit/)
 
