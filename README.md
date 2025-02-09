@@ -110,9 +110,9 @@ http://localhost:8000/
 
 | Model |  Data                | Description
 | :-------- |  :------------------------- |-|
-| `Books` | 500| Create 500 Books Data |
-| `Authors` | 50  |Create 50 Authors Data |
-| `Categories` | 10 |Create 10 Categories Data |
+| `Books📖` | 500| Create 500 Books Data |
+| `Authors✍️` | 50  |Create 50 Authors Data |
+| `Categories🏷️` | 10 |Create 10 Categories Data |
 
 
 ## 📖Books Attributes
@@ -388,6 +388,7 @@ Authors Url :
 ```bash
 http://127.0.0.1:8000/api/v1/authors
 ```
+The URL will return data containing 5 author entries with pagination links, along with code, messages, and success status.
 Result :
 
 ```json
@@ -551,6 +552,8 @@ Category Url :
 ```bash
 http://127.0.0.1:8000/api/v1/categories
 ```
+The URL will return data containing 5 category entries with pagination links, along with code, messages, and success status.
+
 Result :
 
 ```json
@@ -672,6 +675,8 @@ Books Url :
 ```bash
 http://127.0.0.1:8000/api/v1/books/5
 ```
+The URL will return one book entries  with code, messages, and success status.
+
 Result : 
 
 ```json
@@ -705,6 +710,7 @@ Authors Url :
 ```bash
 http://127.0.0.1:8000/api/v1/authors/5
 ```
+The URL will return one author entries with code, messages, and success status.
 Result : 
 
 ```json
@@ -731,6 +737,7 @@ Categories Url :
 ```bash
 http://127.0.0.1:8000/api/v1/categories/5
 ```
+The URL will return one category entries  with code, messages, and success status.
 Result : 
 
 ```json
@@ -757,6 +764,8 @@ Books Url :
 ```bash
 http://127.0.0.1:8000/api/v1/books?search=fugiat+quo
 ```
+
+The URL will return the books entry with the code, message, and success status. from search results based on title
 Result : 
 ```json
 {
@@ -825,6 +834,7 @@ Authors Url :
 ```bash
 http://127.0.0.1:8000/api/v1/authors?search=Hilton
 ```
+The URL will return the authors entry with the code, message, and success status. from search results based on name
 Result : 
 ```json
 {
@@ -886,6 +896,7 @@ Categories Url :
 ```bash
 http://127.0.0.1:8000/api/v1/categories/?search=pariatur
 ```
+The URL will return the categories entry with the code, message, and success status. from search results based on name
 Result : 
 ```json
 {
@@ -937,7 +948,7 @@ Result :
     "total": 1
 }
 ```
-####  `All Model`
+####  `All Model{book, author, category}`
 
 #### Sorting Data Order By
 
@@ -946,8 +957,9 @@ Result :
 
  Url :
 ```bash
-http://127.0.0.1:8000/api/v1/model?order=latest
+http://127.0.0.1:8000/api/v1/{model}?order=latest
 ```
+The URL will return {model} entries based on latest or oldest. with code, message and success status.
 
 ####  `Book Model`
 
@@ -963,6 +975,8 @@ http://127.0.0.1:8000/api/v1/books?author=20
 ```bash
 http://127.0.0.1:8000/api/v1/books?category=10
 ```
+The URL will return a {model} entry based on the model ID, for example: authorId=12 will produce all books from the author with ID 12 as well as the same category. with code, message and success status.
+
 ## ➕POST Method Example
 
 ####  `Books Model`
@@ -973,6 +987,7 @@ Books Url :
 ```bash
 http://127.0.0.1:8000/api/v1/books
 ```
+The URL will enter data into the books table
 
 body : 
 ```json
@@ -983,6 +998,7 @@ body :
    "category_id" : 9
 }
 ```
+The body above is the data that must be filled in to enter it into the books table
 
 result : 
 ```json
@@ -1008,6 +1024,7 @@ result :
 }
 ```
 
+If there is an error during validation, an error message will appear immediately
 validation error Example : 
 ```json
 {
@@ -1022,6 +1039,7 @@ validation error Example :
 }
 ```
 
+
 ####  `Author Model`
 
 #### Store Data
@@ -1030,6 +1048,7 @@ Authors Url :
 ```bash
 http://127.0.0.1:8000/api/v1/authors
 ```
+The URL will enter data into the authors table
 
 body : 
 ```json
@@ -1038,6 +1057,7 @@ body :
    "biography" : "Seorang Penulis Yang Berbakat Asal Bali"
 }
 ```
+The body above is the data that must be filled in to enter it into the authors table
 
 result : 
 ```json
@@ -1056,6 +1076,7 @@ result :
 }
 ```
 
+If there is an error during validation, an error message will appear immediately
 validation error Example : 
 ```json
 {
@@ -1078,6 +1099,7 @@ Categories Url :
 ```bash
 http://127.0.0.1:8000/api/v1/categories
 ```
+The URL will enter data into the categories table
 
 body : 
 ```json
@@ -1086,6 +1108,7 @@ body :
    "biography" : "Buku Buku Yang Menceritakan Kisah Kisah Legenda"
 }
 ```
+The body above is the data that must be filled in to enter it into the categories table
 
 result : 
 ```json
@@ -1104,6 +1127,7 @@ result :
 }
 ```
 
+If there is an error during validation, an error message will appear immediately
 validation error Example : 
 ```json
 {
@@ -1127,6 +1151,8 @@ Books Url :
 ```bash
 http://127.0.0.1:8000/api/v1/books/20
 ```
+The URL will update the book data
+
 > Note: Only the fields that are filled in will be updated, the others will be ignored 
 
 body :
@@ -1138,6 +1164,7 @@ body :
    "category_id": 8
 }
 ```
+The body above is data that must be filled in to be used as new data that will replace the previous data, depending on the field selected
 
 result : 
 ```json
@@ -1171,6 +1198,8 @@ Authors Url :
 ```bash
 http://127.0.0.1:8000/api/v1/authors/20
 ```
+
+The URL will update the author data
 > Note: Only the fields that are filled in will be updated, the others will be ignored 
 
 body :
@@ -1180,6 +1209,7 @@ body :
     "biography" : "penulis berbakat asal jawa timur"
 }
 ```
+The body above is data that must be filled in to be used as new data that will replace the previous data, depending on the field selected
 
 result : 
 ```json
@@ -1206,6 +1236,8 @@ Categories Url :
 ```bash
 http://127.0.0.1:8000/api/v1/categories/9
 ```
+
+The URL will update the category data
 > Note: Only the fields that are filled in will be updated, the others will be ignored 
 
 body :
@@ -1215,6 +1247,7 @@ body :
     "description" : "Buku Buku Yang Menceritakan Pahitnya Hidup"
 }
 ```
+The body above is data that must be filled in to be used as new data that will replace the previous data, depending on the field selected
 
 result : 
 ```json
@@ -1243,6 +1276,7 @@ Model Url :
 ```bash
 http://127.0.0.1:8000/api/v1/books/20
 ```
+The URL above is used to delete book data based on ID
 
 result :
 ```json
@@ -1260,6 +1294,7 @@ Model Url :
 ```bash
 http://127.0.0.1:8000/api/v1/authors/20
 ```
+The URL above is used to delete author data based on ID
 
 result :
 ```json
@@ -1277,6 +1312,7 @@ Model Url :
 ```bash
 http://127.0.0.1:8000/api/v1/categories/20
 ```
+The URL above is used to delete category data based on ID
 
 result :
 ```json
