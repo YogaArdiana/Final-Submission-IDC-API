@@ -389,6 +389,7 @@ Authors Url :
 http://127.0.0.1:8000/api/v1/authors
 ```
 The URL will return data containing 5 author entries with pagination links, along with code, messages, and success status.
+
 Result :
 
 ```json
@@ -711,6 +712,7 @@ Authors Url :
 http://127.0.0.1:8000/api/v1/authors/5
 ```
 The URL will return one author entries with code, messages, and success status.
+
 Result : 
 
 ```json
@@ -738,6 +740,7 @@ Categories Url :
 http://127.0.0.1:8000/api/v1/categories/5
 ```
 The URL will return one category entries  with code, messages, and success status.
+
 Result : 
 
 ```json
@@ -766,6 +769,7 @@ http://127.0.0.1:8000/api/v1/books?search=fugiat+quo
 ```
 
 The URL will return the books entry with the code, message, and success status. from search results based on title
+
 Result : 
 ```json
 {
@@ -835,6 +839,7 @@ Authors Url :
 http://127.0.0.1:8000/api/v1/authors?search=Hilton
 ```
 The URL will return the authors entry with the code, message, and success status. from search results based on name
+
 Result : 
 ```json
 {
@@ -897,6 +902,7 @@ Categories Url :
 http://127.0.0.1:8000/api/v1/categories/?search=pariatur
 ```
 The URL will return the categories entry with the code, message, and success status. from search results based on name
+
 Result : 
 ```json
 {
@@ -1128,6 +1134,7 @@ result :
 ```
 
 If there is an error during validation, an error message will appear immediately
+
 validation error Example : 
 ```json
 {
@@ -1200,6 +1207,7 @@ http://127.0.0.1:8000/api/v1/authors/20
 ```
 
 The URL will update the author data
+
 > Note: Only the fields that are filled in will be updated, the others will be ignored 
 
 body :
@@ -1238,6 +1246,7 @@ http://127.0.0.1:8000/api/v1/categories/9
 ```
 
 The URL will update the category data
+
 > Note: Only the fields that are filled in will be updated, the others will be ignored 
 
 body :
@@ -1294,6 +1303,7 @@ Model Url :
 ```bash
 http://127.0.0.1:8000/api/v1/authors/20
 ```
+
 The URL above is used to delete author data based on ID
 
 result :
@@ -1304,6 +1314,7 @@ result :
     "message": "Data Author Berhasil Dihapus"
 }
 ```
+
 ####  `categories`
 
 #### delete Data
@@ -1312,6 +1323,7 @@ Model Url :
 ```bash
 http://127.0.0.1:8000/api/v1/categories/20
 ```
+
 The URL above is used to delete category data based on ID
 
 result :
